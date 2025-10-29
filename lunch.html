@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Delight Kitchen - Собрать ланч</title>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="lunch.css">
+</head>
+<body>
+    <header>
+        <h1>Собрать ланч</h1>
+        <nav>
+            <a href="index.html">Главная</a>
+            <a href="lunch.html" class="active">Собрать ланч</a>
+        </nav>
+    </header>
+
+    <main>
+        <section id="soups">
+            <h2>Супы</h2>
+            <div class="dishes-grid"></div>
+        </section>
+
+        <section id="mains">
+            <h2>Главные блюда</h2>
+            <div class="dishes-grid"></div>
+        </section>
+
+        <section id="drinks">
+            <h2>Напитки</h2>
+            <div class="dishes-grid"></div>
+        </section>
+    </main>
+
+    <section id="order-form">
+        <h2>Ваш заказ</h2>
+        <form action="https://httpbin.org/post" method="post" id="orderForm">
+            <p id="nothing-selected">Ничего не выбрано</p>
+
+            <div class="order-category" style="display: none;">
+                <h3>Суп</h3>
+                <p id="selected-soup">Блюдо не выбрано</p>
+                <input type="hidden" name="soup" id="soup-input">
+            </div>
+
+            <div class="order-category" style="display: none;">
+                <h3>Главное блюдо</h3>
+                <p id="selected-main">Блюдо не выбрано</p>
+                <input type="hidden" name="main" id="main-input">
+            </div>
+
+            <div class="order-category" style="display: none;">
+                <h3>Напиток</h3>
+                <p id="selected-drink">Напиток не выбран</p>
+                <input type="hidden" name="drink" id="drink-input">
+            </div>
+
+            <p id="total-price" style="display: none; font-weight: bold; margin-top: 15px;"></p>
+
+            <div class="form-section">
+                <h3>Данные клиента</h3>
+                <label>Имя: <input type="text" name="name" required></label>
+                <label>Телефон: <input type="tel" name="phone" required></label>
+                <label>Адрес: <textarea name="address" required></textarea></label>
+            </div>
+
+            <div class="form-buttons">
+                <button type="reset">Сбросить</button>
+                <button type="submit">Отправить</button>
+            </div>
+        </form>
+    </section>
+
+    <footer>
+        <p>Контакты: <a href="tel:+79991234567">+7 (999) 123-45-67</a> | <a href="mailto:info@delightkitchen.ru">info@delightkitchen.ru</a> | Москва, ул. Вкусная, 1</p>
+    </footer>
+
+    <!-- НОВЫЕ ФАЙЛЫ -->
+    <script src="data.js"></script>
+    <script src="render.js"></script>
+    <script src="order.js"></script>
+</body>
+</html>
